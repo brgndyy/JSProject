@@ -5,6 +5,9 @@ const loadingIcon = document.getElementById("loadingContainer");
 let limit = 5;
 let page = 1;
 
+
+// 데이터 요청해오기 
+
 const getRandomPost = async () => {
   const res = await fetch(
     `https://jsonplaceholder.typicode.com/posts?_limit=${limit}&_page=${page}`
@@ -15,6 +18,8 @@ const getRandomPost = async () => {
 
   addToDOMData(data);
 };
+
+// 데이터 브라우저에 띄우기 
 
 const addToDOMData = (data) => {
   data.forEach((item) => {
@@ -34,7 +39,8 @@ const addToDOMData = (data) => {
 };
 
 
-getRandomPost();
+//스크롤 이벤트
+
 
 document.addEventListener("scroll", (e) => {
   const { clientHeight, scrollTop, scrollHeight } = e.target.scrollingElement;
@@ -46,6 +52,8 @@ document.addEventListener("scroll", (e) => {
     }, 500);
   }
 });
+
+//필터링 이벤트 
 
 const filterPost = (e) => {
     const words = e.target.value;
@@ -63,6 +71,8 @@ const filterPost = (e) => {
     })
     
 }
+
+getRandomPost();
 
 
 filter.addEventListener('input', filterPost);

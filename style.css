@@ -55,6 +55,7 @@ h1{
     border: none;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
     background-color: rgb(143, 143, 201);
+    border-radius: 10px;
     margin: 60px 0;
     padding: 30px;
     display: flex;
