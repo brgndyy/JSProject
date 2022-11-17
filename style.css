@@ -96,10 +96,15 @@ h1{
 .loadingContainer{
     width: 150px;
     height: 50px;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 }
+
+.loadingContainer.show{
+    display: flex;
+}
+
 
 .circle{
     width: 10px;
